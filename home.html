@@ -84,6 +84,35 @@
         </div>
     </nav>
     <!--/.Navbar -->
+
+    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Quiz</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+                        <input type="email" id="defaultForm-email" class="form-control validate">
+                    </div>
+
+                    <div class="md-form mb-4">
+                        <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+                        <input type="password" id="defaultForm-pass" class="form-control validate">
+                    </div>
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <a href="logged.html"><button class="btn btn-default">Login</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="alert alert-success alert-dismissible">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <strong>Success!</strong> You are logged in!
@@ -792,7 +821,7 @@
                     <!-- Text -->
                     <h4 class="card-text">Play and Win exciting prizes and upto 50% off on bookings.</h4>
                     <!-- Link -->
-                    <a href="#!" class="black-text d-flex justify-content-end">
+                    <a href="#" class="black-text d-flex justify-content-end" data-toggle="modal" data-target="#modalLoginForm">
                         <h5>Attempt Quiz<i class="fas fa-angle-double-right"></i></h5>
                     </a>
 

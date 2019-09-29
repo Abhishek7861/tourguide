@@ -808,7 +808,9 @@
                     </button>
                 </div>
                 <div id="quiz"></div>
-                <button class="btn btn-default" id="submit">Submit</button>
+                <center>
+                    <div id="close-button"><button class="btn btn-success" id="submit">Submit</button></div>
+                </center>
                 <div id="results"></div>
             </div>
         </div>
@@ -911,21 +913,45 @@
                             '<input type="radio" name="question' + i + '" value="' + letter + '">' +
                             letter + ': ' +
                             questions[i].answers[letter] +
-                            '</label>'
+                            '</label>&nbsp &nbsp &nbsp'
                         );
                     }
 
                     // add this question and its answers to the output
-                    output.push(
-                        '<div class="question">' + questions[i].question + '</div>' +
-                        '<div class="answers">' + answers.join('') + '</div>'
-                    );
+                    if (i % 2 == 0) {
+                        output.push(
+                            '<div class="card bg-light mb-3"> <div class="question"><b>' + questions[i].question + '</div>' +
+                            '<div class="answers">' + answers.join('') + '</b></div></div>'
+                        );
+                    } else {
+                        output.push(
+                            '<div class="card mb-3"><div class="question"><b>' + questions[i].question + '</div>' +
+                            '<div class="answers">' + answers.join('') + '</b></div></div>'
+                        );
+                    }
                 }
 
                 // finally combine our output list into one string of html and put it on the page
                 quizContainer.innerHTML = output.join('');
             }
 
+            function myFunction() {
+                var x = document.getElementById("quiz");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+
+            function myFunction2() {
+                var x = document.getElementById("close-button");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
 
             function showResults(questions, quizContainer, resultsContainer) {
 
@@ -970,9 +996,10 @@
 
             // on submit, show results
             submitButton.onclick = function() {
+                myFunction();
+                myFunction2();
                 showResults(questions, quizContainer, resultsContainer);
             }
-
         }
     </script>
 </body>
